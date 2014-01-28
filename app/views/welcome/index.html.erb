@@ -1,0 +1,50 @@
+<div>
+  <div class="calendar"></div>
+</div>
+<div id = "create_event_dialog" class="dialog" style ="display:none;"></div>
+<div id = "event_desc_dialog" class="dialog" style ="display:none;"></div>
+<p>
+  <%=link_to 'Create Event', 'javascript:void()', :id => 'create_new_event' %>
+</p>
+<script>
+  $(document).ready(function(){
+    $('#create_new_event').click(function(event) {
+      FullcalendarEngine.Form.display()
+      event.preventDefault();
+    });
+
+    $('.calendar').fullCalendar({
+      editable: <%= FullcalendarEngine::Configuration['editable'] %>,
+      header:   <%= FullcalendarEngine::Configuration['header'].to_json.html_safe %>,
+      defaultView: "<%= FullcalendarEngine::Configuration['defaultView'] %>",
+      height:   <%= FullcalendarEngine::Configuration['height'] %>,
+      slotMinutes: <%= FullcalendarEngine::Configuration['slotMinutes'] %>,
+      loading: function(bool){
+        if (bool) 
+          $('#loading').show();
+        else 
+          $('#loading').hide();
+      },
+      events: "fullcalendar_engine/events/get_events",
+      timeFormat: 'h:mm t{ - h:mm t} ',
+      dragOpacity: "<%= FullcalendarEngine::Configuration['dragOpacity'] %>",
+      eventDrop: function(event, dayDelta, minuteDelta, allDay, revertFunc){
+        moveEvent(event, dayDelta, minuteDelta, allDay);
+      },
+      eventResize: function(event, dayDelta, minuteDelta, revertFunc){
+        resizeEvent(event, dayDelta, minuteDelta);
+      },
+      eventClick: function(event, jsEvent, view){
+        showEventDetails(event);
+      },
+      selectable: <%= FullcalendarEngine::Configuration['selectable'] %>,
+      select: function( startDate, endDate, allDay, jsEvent, view ) {
+        FullcalendarEngine.Form.display({ 
+          starttime: new Date(startDate.getTime()), 
+          endtime: new Date(endDate.getTime()), 
+          allDay: allDay 
+        })
+      }
+    });
+  });
+</script>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>::Jquery Full Calendar Engine ::</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <center>
+    <h1> Engine implementation of jQuery full calendar with RubyonRails backend by <a href='http://vinsol.com'>VinSol team</a> </h1>
+
+    <small>Download demo app source code from <a href = 'http://github.com/vinsol/fullcalendar_rails'>http://github.com/vinsol/fullcalendar_rails</a></small>
+  </center>
+  <%= yield %>
+</body>
+</html>
