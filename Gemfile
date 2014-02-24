@@ -7,7 +7,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'turbolinks'
-gem "fullcalendar_engine", "~> 1.0.3"
+gem 'fullcalendar_engine', '~> 1.0.3'
 group :development do 
   gem 'debugger'
   gem 'binding_of_caller'
