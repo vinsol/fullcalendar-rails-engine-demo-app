@@ -34,6 +34,6 @@ ActiveRecord::Schema.define(version: 20131230125529) do
     t.datetime "updated_at"
   end
 
-  add_index "fullcalendar_engine_events", ["event_series_id"], name: "index_fullcalendar_engine_events_on_event_series_id"
+  add_index "fullcalendar_engine_events", ["event_series_id"], name: "index_fullcalendar_engine_events_on_event_series_id", using: :btree
 
 end
