@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FcTest</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class = 'nav'>
+  <li>
+    <%=link_to 'Home', root_path %>
+  </li>
+  <li>
+    <%=link_to 'Posts', posts_path %>
+  </li>
+  <li>
+    <%=link_to 'Calendar', fullcalendar_engine_path %>
+  </li>
+  <li>
+    <%=link_to 'Calendar at custom path', kalendar_path %>
+  </li>  
+</div>
+<%= yield %>
+
+</body>
+</html>

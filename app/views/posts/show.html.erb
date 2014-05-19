@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @post.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+
+  <div>
+    <div class="calendar"></div>
+  </div>
+  <div id = "create_event_dialog" class="dialog" style ="display:none;"></div>
+  <div id = "event_desc_dialog" class="dialog" style ="display:none;"></div>
