@@ -77,6 +77,6 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOW-FROM http://vinsol.com' }
+  config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOW-FROM http://*.vinsol.com' }
 
 end
