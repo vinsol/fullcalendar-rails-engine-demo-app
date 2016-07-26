@@ -46,4 +46,4 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'fullcalendar_engine'
+gem 'fullcalendar_engine', "1.0.4"
