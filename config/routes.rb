@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  resources :posts
-  mount FullcalendarEngine::Engine => "/calendar"
+  mount FullcalendarEngine::Engine => "/fullcalendar/demo"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
-  resource 'home'
-  get '/kalendar' => 'kalendar#index', as: :kalendar
+  # root  'fullcalendar/demo'
+  # resource 'home'
+  # get '/kalendar' => 'kalendar#index', as: :kalendar
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

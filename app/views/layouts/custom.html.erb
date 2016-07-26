@@ -8,20 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class = 'nav'>
-  <li>
-     <%=link_to 'Home', main_app.root_path %>
-  </li>
-  <li>
-    <%=link_to 'Posts', main_app.posts_path %>
-  </li>
-    <li>
-    <%=link_to 'Calendar', main_app.fullcalendar_engine_path %>
-  </li>
-  <li>
-    <%=link_to 'Calendar at custom path', main_app.kalendar_path %>
-  </li>    
-</div>
+
 <%= yield %>
 
 </body>
